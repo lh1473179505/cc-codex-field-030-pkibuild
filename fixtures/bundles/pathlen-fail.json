@@ -1,0 +1,119 @@
+{
+  "trust_anchors": [
+    {
+      "serial": "root-pl0",
+      "subject": {
+        "cn": "Shop Root PL",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Roots"
+      },
+      "issuer": {
+        "cn": "Shop Root PL",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Roots"
+      },
+      "ski": "ski-root-pl0",
+      "aki": "ski-root-pl0",
+      "not_before": 1760408000,
+      "not_after": 1794536000,
+      "ca": true,
+      "key_usage": [
+        "keyCertSign",
+        "cRLSign"
+      ],
+      "eku": [
+        "anyExtendedKeyUsage"
+      ],
+      "sig_key": "root-a-key",
+      "path_len": 0,
+      "signature": "5110587d0761453f0a90985e56b818e1c4a180b46ec7e6a848fbd602227dc71f"
+    }
+  ],
+  "certs": [
+    {
+      "serial": "int-pl",
+      "subject": {
+        "cn": "Shop Intermediate",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Issuing",
+        "san": {
+          "dns": [
+            "shop.test"
+          ]
+        }
+      },
+      "issuer": {
+        "cn": "Shop Root PL",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Roots"
+      },
+      "ski": "ski-int-pl",
+      "aki": "ski-root-pl0",
+      "not_before": 1760408000,
+      "not_after": 1794536000,
+      "ca": true,
+      "key_usage": [
+        "keyCertSign",
+        "cRLSign"
+      ],
+      "eku": [
+        "anyExtendedKeyUsage"
+      ],
+      "sig_key": "root-a-key",
+      "path_len": 0,
+      "signature": "801f1edc7528c218c9dfb69246c8be2c670ecdc2d34fb780ba6e7f8b8d32f4ae"
+    },
+    {
+      "serial": "leaf-www",
+      "subject": {
+        "cn": "www.shop.test",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Web",
+        "san": {
+          "dns": [
+            "www.shop.test",
+            "shop.test"
+          ]
+        }
+      },
+      "issuer": {
+        "cn": "Shop Intermediate",
+        "org": "Shop",
+        "country": "CN",
+        "ou": "Issuing",
+        "san": {
+          "dns": [
+            "shop.test"
+          ]
+        }
+      },
+      "ski": "ski-leaf-pl",
+      "aki": "ski-int-pl",
+      "not_before": 1760408000,
+      "not_after": 1794536000,
+      "ca": false,
+      "key_usage": [
+        "digitalSignature"
+      ],
+      "eku": [
+        "serverAuth"
+      ],
+      "sig_key": "int-pl-key",
+      "signature": "640cadc2ca1f98257be003c2e44bd6bc15d51c3f599f3ce5a3686c8e331c13ef"
+    }
+  ],
+  "crls": [],
+  "keys": {
+    "root-a-key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "int-ca-key": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "leaf-key": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "evil-ca-key": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "root-b-key": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "int-pl-key": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  }
+}
